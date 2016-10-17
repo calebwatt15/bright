@@ -3,7 +3,7 @@ echo $@
 exit 1
 }
 
-[ $EUID -ne 0 ] && {
+[ "$(id -u)" != "0" ] && {
 sudo $0 $@
 exit $?
 }
